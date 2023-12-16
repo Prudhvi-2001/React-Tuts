@@ -12,6 +12,8 @@ const reducer: Reducer<AppState, Action> = (state = initialState, action) => {
       return { ...state, count: state.count + 1 };
     case 'DECREMENT':
       return { ...state, count: state.count - 1 };
+    case 'MAKEZERO':
+      return {...state,count:0}
     default:
       return state;
   }

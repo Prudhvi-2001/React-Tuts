@@ -6,12 +6,13 @@ import { AppState, Action } from '../types';
 // Define props using the types
 type CounterProps = ConnectedProps<typeof connector>;
 
-const Counter: React.FC<CounterProps> = ({ count, increment, decrement }) => {
+const Counter: React.FC<CounterProps> = ({ count, increment, decrement,makezero }) => {
   return (
     <div>
       <h1>Counter: {count}</h1>
       <button onClick={increment}>Increment</button>
       <button onClick={decrement}>Decrement</button>
+      <button onClick={makezero}>Make Zero</button>
     </div>
   );
 };
@@ -27,6 +28,7 @@ const mapStateToProps = (state: AppState) => {
 const mapDispatchToProps = {
   increment: () => ({ type: 'INCREMENT' } as Action),
   decrement: () => ({ type: 'DECREMENT' } as Action),
+  makezero:()=>({type:'MAKEZERO'} as Action)
 };
 
 // Connect the component to the Redux store

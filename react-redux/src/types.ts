@@ -10,6 +10,10 @@ export interface AppState {
   export interface DecrementAction {
     type: 'DECREMENT';
   }
+
+  export interface Makezero{
+    type:"MAKEZERO";
+  }
   
-  export type Action = IncrementAction | DecrementAction;
+  export type Action = IncrementAction | DecrementAction | Makezero;
   
