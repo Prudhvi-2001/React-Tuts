@@ -9,6 +9,7 @@ const App: React.FC = () => {
       <div>
         <h1>React-Redux Example</h1>
         <Counter />
+      
       </div>
     </Provider>
   );
