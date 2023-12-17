@@ -5,6 +5,12 @@ interface Title{
 interface Id{
     id:number
 }
+interface UserData{
+        userId: number,
+        id: number,
+        title:string,
+        completed:boolean,
+}
 export const todoApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: 'https://jsonplaceholder.typicode.com',
   prepareHeaders: (headers, { getState }) => {
@@ -14,7 +20,7 @@ export const todoApi = createApi({
 
 }),
   endpoints: (builder) => ({
-    getTodos: builder.query<any, void>({
+    getTodos: builder.query<any, UserData>({
       query: () => 'todos',
     }),
     getTodo: builder.query<any,number>({
