@@ -20,7 +20,7 @@ export const todoApi = createApi({
 
 }),
   endpoints: (builder) => ({
-    getTodos: builder.query<any, UserData>({
+    getTodos: builder.query<any, void>({
       query: () => 'todos',
     }),
     getTodo: builder.query<any,number>({
