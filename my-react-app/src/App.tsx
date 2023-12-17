@@ -5,6 +5,7 @@ import './App.css'
 import Form from './components/Form'
 import { User } from './assets/interfaces/Interface'
 import ArrayMthods from './components/ArrayMthods'
+import UseEffect from './components/UseEffect'
 function App() {
  const handleSubmit = ( data : User)=>{
  console.log(data)
@@ -14,6 +15,7 @@ function App() {
     <>
     <Form onSubmit={handleSubmit}/>
     <ArrayMthods/>
+    <UseEffect/>
     </>
   )
 }

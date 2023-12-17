@@ -17,3 +17,9 @@ export interface Users {
     usersNames:string[]
     grades:number[]
  }
+export interface Jsonplaceholder{
+    userId: number,
+    id: number,
+    title:string,
+    body: string,
+}
