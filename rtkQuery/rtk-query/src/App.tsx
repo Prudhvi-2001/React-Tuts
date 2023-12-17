@@ -1,8 +1,8 @@
 // App.tsx
 import React from 'react';
 import { Provider } from 'react-redux';
-import TodoList from './components/TodoList';
-import { store } from './components/Store';
+import TodoList from './todo/TodoList';
+import store from './todo/TodoStore';
 const App: React.FC = () => {
   return (
     <Provider store={store}>
