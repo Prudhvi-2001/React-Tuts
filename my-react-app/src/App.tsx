@@ -6,9 +6,13 @@ import Form from './components/Form'
 import { User } from './assets/interfaces/Interface'
 import ArrayMthods from './components/ArrayMthods'
 import UseEffect from './components/UseEffect'
+import Component, { Id } from './components/Component'
 function App() {
  const handleSubmit = ( data : User)=>{
  console.log(data)
+ }
+ const onSubmit = (id : Id)=>{
+  console.log(id)
  }
 
   return (
@@ -16,6 +20,7 @@ function App() {
     <Form onSubmit={handleSubmit}/>
     <ArrayMthods/>
     <UseEffect/>
+    <Component name='prudhvi' email="prudhvi@gmail.com" onSubmit={onSubmit}/>
     </>
   )
 }
