@@ -19,7 +19,7 @@ export const todoApi = createApi({
     }),
     getTodo: builder.query<any,number>({
         query:(id)=>`todos/${id}`
-    }),
+    }), 
     createTodo: builder.mutation<any, Title>({
       query: (newTodo) => ({
         url: 'todos',
