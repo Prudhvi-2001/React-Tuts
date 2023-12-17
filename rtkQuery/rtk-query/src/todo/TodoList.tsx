@@ -1,9 +1,12 @@
 // TodoList.tsx
 import React, { useState } from 'react';
-import { useGetTodosQuery, useCreateTodoMutation } from './TodoSlice';
+import { useGetTodosQuery, useCreateTodoMutation, useGetTodoQuery } from './TodoSlice';
 
 const TodoList: React.FC = () => {
   const { data: todos, isError, isLoading } = useGetTodosQuery();
+ const {data:getTodo} = useGetTodoQuery(12);
+ console.log(getTodo)
+
   const [newTodoTitle, setNewTodoTitle] = useState('');
   const [createTodo] = useCreateTodoMutation();
   console.log(isError)

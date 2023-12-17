@@ -1,5 +1,10 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-
+interface Title{
+    title:string
+}
+interface Id{
+    id:number
+}
 export const todoApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: 'https://jsonplaceholder.typicode.com',
   prepareHeaders: (headers, { getState }) => {
@@ -12,7 +17,10 @@ export const todoApi = createApi({
     getTodos: builder.query<any, void>({
       query: () => 'todos',
     }),
-    createTodo: builder.mutation<any, Partial<{ title: string }>>({
+    getTodo: builder.query<any,number>({
+        query:(id)=>`todos/${id}`
+    }),
+    createTodo: builder.mutation<any, Title>({
       query: (newTodo) => ({
         url: 'todos',
         method: 'POST',
@@ -22,4 +30,4 @@ export const todoApi = createApi({
   }),
 });
 
-export const { useGetTodosQuery, useCreateTodoMutation } = todoApi
+export const { useGetTodosQuery, useCreateTodoMutation,useGetTodoQuery, } = todoApi

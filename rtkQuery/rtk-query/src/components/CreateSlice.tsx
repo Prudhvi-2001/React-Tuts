@@ -7,6 +7,11 @@ export const api = createApi({
     getTodos: builder.query<any, void>({
       query: () => 'todos',
     }),
+    getTodo: builder.query<any,void>({
+        query:(id)=>`todos/${id}`
+    })
+    
+    
   }),
 });
 
