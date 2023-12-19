@@ -1,0 +1,31 @@
+.my-form {
+    max-width: 500px;
+    margin: auto;
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .my-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .my-form input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  .my-form .error {
+    border-color: red;
+  }
+  
+  .my-form .error-message {
+    color: red;
+    margin-top: 5px;
+  }
+  

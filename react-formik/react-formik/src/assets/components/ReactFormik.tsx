@@ -45,6 +45,7 @@ const MyForm: React.FC = () => {
       initialValues={initialValues}
       validate={validate}
       onSubmit={onSubmit}
+      
     >
       <Form>
         {/* Input for name */}
