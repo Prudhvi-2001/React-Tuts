@@ -5,6 +5,7 @@ import Addition from './Addition'
 import SampleProps from './SampleProps'
 import InputUseRef from './InputUseRef'
 import Input from './Input'
+import NumberList from './useMemoEx'
 
 function SParent() {
     const [color,setColor]=useState('')
@@ -88,6 +89,7 @@ const inputData = [
     name: 'password',
   },
 ];
+//get the form data in InputProps
 const allData = userData || sampleData;
   return (
     <div>
@@ -108,11 +110,12 @@ const allData = userData || sampleData;
        <p>Dynamic Input</p>
        <form onSubmit={onSubmit}>
        {inputData.map(ele => (
-        <Input key={ele.id} {...ele} onChange = {handleChange}/>
+        <Input key={ele.id} {...ele} onChange = {handleChange} />
        ))}
        <button>Submit</button>
        </form>
        
+       <NumberList/>
     </div>
   )
 }
