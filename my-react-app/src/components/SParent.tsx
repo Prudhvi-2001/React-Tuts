@@ -4,12 +4,18 @@ import TextChildren from './TextChildren'
 import Addition from './Addition'
 import SampleProps from './SampleProps'
 import InputUseRef from './InputUseRef'
+import Input from './Input'
 
 function SParent() {
     const [color,setColor]=useState('')
     const [text,setText]=useState('')
     const [keep,keepText]=useState('')
     const [time,setTime] = useState(null)
+    const [formData, setFormData] = useState({
+      name: '',
+      email: '',
+      password: '',
+    });
     //way of passing the data through all the componets
     const getColor = (color) =>{
         setColor(color)
@@ -46,7 +52,42 @@ const numnericalData ={
   num2:30,
   Addition:addition,
 }
+const handleChange = (e:React.ChangeEvent<HTMLInputElement>) => {
+  const { name, value } = e.target;
+  setFormData((prevData) => ({
+    ...prevData,
+    [name]: value,
+  }));
+};
 
+const onSubmit = (e:React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+  // Handle form submission with formData
+  console.log('Form submitted:', formData);
+};
+const inputData = [
+  {
+    id: 1,
+    type: 'text',
+    value: formData.name,
+    placeholder: 'Enter Name',
+    name: 'name',
+  },
+  {
+    id: 2,
+    type: 'email',
+    value: formData.email,
+    placeholder: 'Email ID',
+    name: 'email',
+  },
+  {
+    id: 3,
+    type: 'password',
+    value: formData.password,
+    placeholder: 'Enter Password',
+    name: 'password',
+  },
+];
 const allData = userData || sampleData;
   return (
     <div>
@@ -64,6 +105,14 @@ const allData = userData || sampleData;
         </div>
        ))}
        <InputUseRef/>
+       <p>Dynamic Input</p>
+       <form onSubmit={onSubmit}>
+       {inputData.map(ele => (
+        <Input key={ele.id} {...ele} onChange = {handleChange}/>
+       ))}
+       <button>Submit</button>
+       </form>
+       
     </div>
   )
 }
