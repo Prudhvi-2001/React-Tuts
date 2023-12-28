@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { FormProps, User, usersData,Users,UsersFunction } from '../assets/interfaces/Interface'
 function Form({onSubmit}:FormProps) {
+    const userName = useRef(null);
     const initialState : User ={
         id:0,
         name:"",
@@ -15,6 +16,7 @@ function Form({onSubmit}:FormProps) {
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>)=>{
         event.preventDefault();
         onSubmit(mainData);
+        console.log(userName.current.value)
     }
     const usersIds : Users ={
         usersId:['user1','user2']
@@ -30,6 +32,7 @@ function Form({onSubmit}:FormProps) {
                  id="id" 
                  value={mainData.id}
                  onChange={handleInputChange}
+                 ref={userName}
                 /><br/>
                  <input type="text"
                  name="name" 

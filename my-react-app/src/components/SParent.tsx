@@ -3,11 +3,13 @@ import SChildren from './SChildren'
 import TextChildren from './TextChildren'
 import Addition from './Addition'
 import SampleProps from './SampleProps'
+import InputUseRef from './InputUseRef'
 
 function SParent() {
     const [color,setColor]=useState('')
     const [text,setText]=useState('')
     const [keep,keepText]=useState('')
+    const [time,setTime] = useState(null)
     //way of passing the data through all the componets
     const getColor = (color) =>{
         setColor(color)
@@ -44,6 +46,7 @@ const numnericalData ={
   num2:30,
   Addition:addition,
 }
+
 const allData = userData || sampleData;
   return (
     <div>
@@ -55,7 +58,12 @@ const allData = userData || sampleData;
       <button onClick={onClick}>Click</button>
       {text}
       <SampleProps allData ={allData} {...allData} /> 
-    
+       {userData.map(ele => (
+        <div>
+          <p>{ele.name}</p>
+        </div>
+       ))}
+       <InputUseRef/>
     </div>
   )
 }
