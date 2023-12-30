@@ -89,6 +89,11 @@ const inputData = [
     name: 'password',
   },
 ];
+const handleString =()=>{
+  alert(JSON.stringify(inputData))
+
+  //Headers is required when you are fetching any kind of data
+}
 //get the form data in InputProps
 const allData = userData || sampleData;
   return (
@@ -116,6 +121,7 @@ const allData = userData || sampleData;
        </form>
        
        <NumberList/>
+       <button onClick={handleString}>Stringfy</button>
     </div>
   )
 }
